@@ -7,3 +7,10 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 app.register_blueprint(template_page, url_prefix="/")
 app.register_blueprint(rest_api, url_prefix="/api")
+
+# This is required for Vercel
+def handler(event, context):
+    return app
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=6000, debug=False)
