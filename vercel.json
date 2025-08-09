@@ -1,10 +1,10 @@
 {
   "functions": {
-    "index.py": {
+    "api/index.py": {
       "runtime": "python3.10"
     }
   },
   "routes": [
-    { "src": "/(.*)", "dest": "index.py" }
+    { "src": "/(.*)", "dest": "api/index.py" }
   ]
 }
