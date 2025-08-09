@@ -11,7 +11,7 @@ def data_json(data):
     here we convert the data to json format calculate the amount days we have to take leave.
     """
     response_data = []
-    threshold = 0.75
+    threshold = 0.85
 
     for item in range(1, len(data)):
         item = data[item]
@@ -44,7 +44,7 @@ def data_json(data):
         # )
 
         # Calculate bunker functionality
-        if temp['percentage_of_attendance'] <= 75:
+        if temp['percentage_of_attendance'] <= 85:
             temp['class_to_attend'] = math.ceil((threshold*temp['total_hours'] - temp['total_present'])/(1-threshold))
         
         else:

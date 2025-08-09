@@ -69,10 +69,10 @@ class AttendanceWebScrapper:
         percentage_of_attendance: int,
         total_hours: int,
         total_present: int,
-        threshold=0.75,
+        threshold=0.85,
     ) -> dict:
         res = {}
-        if percentage_of_attendance <= 75:
+        if percentage_of_attendance <= 85:
             res["class_to_attend"] = math.ceil(
                 (threshold * total_hours - total_present) / (1 - threshold)
             )
